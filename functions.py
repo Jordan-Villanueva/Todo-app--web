@@ -15,6 +15,11 @@ def write_todos(todos_arg, filepath=FILEPATH):
     with open(filepath, 'w') as file:
         file.writelines(todos_arg)
 
+
+def convert_to_meters(feet_loc,inches_loc):
+    meters_loc = feet_loc*0.3048 + inches_loc*0.0254
+    return meters_loc
+
 if __name__ == "__main__":
     print("Hello")
     print("Hi")

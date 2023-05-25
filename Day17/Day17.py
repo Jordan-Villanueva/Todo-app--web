@@ -9,9 +9,19 @@ list_box = sp.Listbox(values=functions.get_todos(), key='todos_list',
                       enable_events=True, size=[45, 10])
 edit_button = sp.Button("Edit")
 
+button_labels = ["Close", "Apply"]
+
+'''
+To create button instances
+layout = []
+for bl in button_labels:
+    layout.append([sp.Button(bl)])
+'''
+
+layout = [[label], [input_box, add_button], [list_box, edit_button]]
 # Do not add only one list; at least add two elements list type inside layout to avoid errors
 window = sp.Window('My To Do App',
-                   layout=[[label], [input_box, add_button], [list_box, edit_button]],
+                   layout=layout,
                    font=('Helvetica', 20))
 
 while True:
@@ -39,5 +49,7 @@ while True:
             window['todo'].update(value=values['todos_list'][0])
         case sp.WIN_CLOSED:
             break
+            # exit() use to terminate the program
 
+print("Bye")
 window.close()
