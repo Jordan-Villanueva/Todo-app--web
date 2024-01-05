@@ -46,7 +46,7 @@ def parse(user_input):
     # Inject the values in a dictionary
     return {"lower_bound": lower_bound, "upper_bound": upper_bound}
 
-    main.py
+    Home.py
 
 from parsers import parse
 import random
@@ -61,7 +61,7 @@ parsed = parse(user_input)
 rand = random.randint(parsed['lower_bound'], parsed['upper_bound'])
 
 print(rand)
-When the user executes main.py file, an error is produced. Place the two files in your IDE and try to debug the program.
+When the user executes Home.py file, an error is produced. Place the two files in your IDE and try to debug the program.
 
 solution: use     parts = user_input.split(",")
 

@@ -104,9 +104,9 @@ def state_of_water(temperature):
 
 Bug-Fixing Exercise 1
 The program depicted below consists of two Python files. The program tries to count and print out the number of periods
- in the "Trees are good. Grass is green." . However, running the main.py file returns an error. Please fix the error.
+ in the "Trees are good. Grass is green." . However, running the Home.py file returns an error. Please fix the error.
 
-main.py:
+Home.py:
 
 import functions
 
@@ -126,7 +126,7 @@ change line to nr_of_periods = functions.count
 Bug-Fixing Exercise 2
 The same program as in exercise 1 now is throwing yet another error. Hunt the error down and fix it.
 
-main.py:
+Home.py:
 
 import functions.py
 
