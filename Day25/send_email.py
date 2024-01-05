@@ -1,22 +1,20 @@
 import smtplib
 
-FROMADDR = "veredis.educacion@gmail.com"
-LOGIN = FROMADDR
-PASSWORD = "jsow tyct bvdq hdch"
-TOADDRS = ["veredis.educacion@gmail.com"]
-SUBJECT = "Test"
+def send_email(msg):
+    FROMADDR = "veredis.educacion@gmail.com"
+    LOGIN = FROMADDR
+    PASSWORD = "jsow tyct bvdq hdch"
+    TOADDRS = ["veredis.educacion@gmail.com"]
+    SUBJECT = "Test"
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.set_debuglevel(1)
+    server.ehlo()
+    server.starttls()
+    server.login(LOGIN, PASSWORD)
+    server.sendmail(FROMADDR, TOADDRS, msg)
+    server.quit()
 
-msg = ("From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n"
-       % (FROMADDR, ", ".join(TOADDRS), SUBJECT))
-msg += "some text\r\n"
 
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.set_debuglevel(1)
-server.ehlo()
-server.starttls()
-server.login(LOGIN, PASSWORD)
-server.sendmail(FROMADDR, TOADDRS, msg)
-server.quit()
 
 '''
 # -*- coding: utf-8 -*-
