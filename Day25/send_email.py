@@ -1,11 +1,12 @@
 import smtplib
+import os
 
 def send_email(msg):
     FROMADDR = "veredis.educacion@gmail.com"
     LOGIN = FROMADDR
-    PASSWORD = "jsow tyct bvdq hdch"
+    PASSWORD = os.getenv("PASSWORD")
     TOADDRS = ["veredis.educacion@gmail.com"]
-    SUBJECT = "Test"
+    # SUBJECT = "Test"
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.set_debuglevel(1)
     server.ehlo()
